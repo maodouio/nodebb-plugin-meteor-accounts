@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-meteor-accounts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NodeBB Override Login with Meteor Accounts",
   "main": "library.js",
   "repository": {

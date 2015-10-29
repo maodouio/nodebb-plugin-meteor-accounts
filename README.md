@@ -23,8 +23,8 @@ This implies:
 1. Since accounts registered on the nodebb site won't be synchronized to Meteor accounts database, all registration should happen on the Meteor site. You'd better disable registration on the nodebb site, or point "Register" link to your Meteor site registration page.
 1. Deleting a user on admin dashboard page won't delete it in Meteor accounts database. If the user log on again the account will be recreated in nodebb accounts database. But banning a user works.
 
-NOTE Once this plugin is activated, all future login actions will go through your Meteor accounts database, including the administrator account. In case you are not ready to switch to Meteor accounts database, but no longer able to log on the site to deactivate the plugin, you can run command `./nodebb reset -p nodebb-plugin-meteor-accounts` .
+NOTE Once this plugin is activated, all future login actions will go through your Meteor accounts database, including the administrator account. In case you are not ready to switch to Meteor accounts database, but no longer able to log on the site to deactivate the plugin, you can run command `./nodebb reset -p nodebb-plugin-meteor-accounts`
 
 ## Trouble?
 
-Please report issues on https://github.com/limingth/nodebb-plugin-meteor-accounts/issues .
+Please report issues on https://github.com/limingth/nodebb-plugin-meteor-accounts/issues
