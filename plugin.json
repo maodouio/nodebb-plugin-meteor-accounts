@@ -1,0 +1,10 @@
+{
+	"id": "nodebb-plugin-meteor-accounts",
+	"name": "NodeBB Override Login with Meteor Accounts",
+	"description": "Override Login with Meteor Accounts",
+	"url": "https://github.com/limingth/nodebb-plugin-meteor-accounts",
+	"library": "./library.js",
+	"hooks": [
+		{ "hook": "action:auth.overrideLogin", "method": "setupLogin" }
+	]
+}

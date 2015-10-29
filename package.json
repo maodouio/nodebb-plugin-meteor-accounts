@@ -1,0 +1,37 @@
+{
+  "name": "nodebb-plugin-meteor-accounts",
+  "version": "0.0.1",
+  "description": "NodeBB Override Login with Meteor Accounts",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/limingth/nodebb-plugin-meteor-accounts"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "override",
+    "login",
+    "meteor",
+    "account"
+  ],
+  "author": {
+    "name": "Sean Song",
+    "email": "songjinshan@gmail.com"
+  },
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/limingth/nodebb-plugin-meteor-accounts/issues"
+  },
+  "readme": "",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "mongodb": "^2.0.47",
+    "sha256": "^0.2.0"
+  },
+  "nbbpm": {
+    "compatibility": "^0.8.0",
+    "index": false
+  }
+}
