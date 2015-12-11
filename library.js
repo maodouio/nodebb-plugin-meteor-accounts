@@ -12,12 +12,15 @@
 
   exports.setupLogin = function() {
     passport.use(new passportLocal(function(username, password, next) {
-      if (!username || !password) {
+      if (!username) {
+        return next(new Error('[[error:invalid-username]]'));
+      }
+      if (!password) {
         return next(new Error('[[error:invalid-password]]'));
       }
 
       var mongoClient = require('mongodb').MongoClient;
-      var email, uid;
+      var userAccount, uid;
       var meteorAccountsDbUrl = nconf.get('meteorAccountsDbUrl');
 
       async.waterfall([
@@ -25,25 +28,28 @@
           mongoClient.connect(meteorAccountsDbUrl, next);
         },
         function(_db, next) {
-          _db.collection('users').find({username: username}).toArray(next);
+          var selector = username.indexOf('@') === -1 ? {username: username} : {'emails.address': username};
+          _db.collection('users').find(selector).toArray(next);
         },
         function(docs, next) {
           if (docs.length === 0) {
             return next(new Error('[[error:no-user]]'));
           }
-          var _user = docs[0];
-          email = _user.emails.length > 0 ? _user.emails[0].address : "";
-          require('bcrypt').compare(require('sha256')(password), _user.services.password.bcrypt, next);
+          userAccount = docs[0];
+          if (!userAccount.username) {
+            return next(new Error('[[error:invalid-username]]'));
+          }
+          require('bcrypt').compare(require('sha256')(password), userAccount.services.password.bcrypt, next);
         },
         function(res, next) {
           if (!res) {
             return next(new Error('[[error:invalid-password]]'));
           }
-          user.getUidByUserslug(username, next);
+          user.getUidByUserslug(userAccount.username, next);
         },
         function(_uid, next) {
           if (!_uid) { // register a user in local database
-            return user.create({username: username, email: email}, next);
+            return user.create({username: userAccount.username, email: userAccount.emails.length > 0 ? userAccount.emails[0].address : ""}, next);
           }
           next(null, _uid);
         },

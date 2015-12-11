@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-meteor-accounts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "NodeBB Override Login with Meteor Accounts",
   "main": "library.js",
   "repository": {
@@ -23,8 +23,6 @@
   "bugs": {
     "url": "https://github.com/limingth/nodebb-plugin-meteor-accounts/issues"
   },
-  "readme": "",
-  "readmeFilename": "README.md",
   "dependencies": {
     "bcrypt": "^0.8.5",
     "mongodb": "^2.0.47",
@@ -33,5 +31,29 @@
   "nbbpm": {
     "compatibility": "^0.8.0",
     "index": false
-  }
+  },
+  "gitHead": "9adf724c232e25e0b0dd2305f031727c3a7d3e3c",
+  "homepage": "https://github.com/limingth/nodebb-plugin-meteor-accounts",
+  "_id": "nodebb-plugin-meteor-accounts@0.0.3",
+  "scripts": {},
+  "_shasum": "27341b15064d8207efcdf78a82b7697bb8105863",
+  "_from": "nodebb-plugin-meteor-accounts@",
+  "_npmVersion": "1.4.28",
+  "_npmUser": {
+    "name": "seanjsong",
+    "email": "songjinshan@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "seanjsong",
+      "email": "songjinshan@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "27341b15064d8207efcdf78a82b7697bb8105863",
+    "tarball": "http://registry.npmjs.org/nodebb-plugin-meteor-accounts/-/nodebb-plugin-meteor-accounts-0.0.3.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/nodebb-plugin-meteor-accounts/-/nodebb-plugin-meteor-accounts-0.0.3.tgz",
+  "readme": "ERROR: No README data found!"
 }
